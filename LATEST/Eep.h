@@ -4,7 +4,7 @@
 
 class class_Eep{
    public:
-      void InitFunction(void);
+      FUNC(void, EEP_CODE) InitFunction(void);
 };
 
 extern class_Eep Eep;

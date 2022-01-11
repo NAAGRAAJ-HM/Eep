@@ -2,6 +2,6 @@
 
 class_Eep Eep;
 
-void class_Eep::InitFunction(void){
+FUNC(void, EEP_CODE) class_Eep::InitFunction(void){
 }
 
