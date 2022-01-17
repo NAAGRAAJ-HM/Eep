@@ -5,9 +5,6 @@ class_Eep Eep;
 FUNC(void, EEP_CODE) class_Eep::InitFunction(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep::InitFunction(void){
-}
-
 FUNC(void, EEP_CODE) class_Eep::SetMode(void){
 }
 
