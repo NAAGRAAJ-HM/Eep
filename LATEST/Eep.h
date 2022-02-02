@@ -26,7 +26,6 @@ class class_Eep{
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, EEP_CODE) InitFunction   (void);
       FUNC(void, EEP_CODE) SetMode        (void);
       FUNC(void, EEP_CODE) Read           (void);
       FUNC(void, EEP_CODE) Write          (void);

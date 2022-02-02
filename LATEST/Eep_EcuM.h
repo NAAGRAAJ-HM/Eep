@@ -1,14 +1,15 @@
+#pragma once
 /*****************************************************/
-/* File   : Eep.cpp                                  */
+/* File   : Eep_EcuM.h                               */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "Eep.h"
+#include "Compiler_Cfg_Eep.h"
 
-#include "Eep_EcuM.h"
+#include "EcuM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -21,6 +22,13 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
+class class_Eep_EcuM : public class_EcuM_Client{
+   public:
+/*****************************************************/
+/* FUNCTIONS                                         */
+/*****************************************************/
+      FUNC(void, EEP_CODE) InitFunction(void);
+};
 
 /*****************************************************/
 /* CONSTS                                            */
@@ -33,45 +41,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_Eep Eep;
-class_Eep_EcuM Eep_EcuM;
-class_Eep_EcuM *Eep_EcuM_ptr = &Eep_EcuM;
-
-/*****************************************************/
-/* FUNCTIONS                                         */
-/*****************************************************/
-FUNC(void, EEP_CODE) class_Eep_EcuM::InitFunction(void){
-}
-
-FUNC(void, EEP_CODE) class_Eep::SetMode(void){
-}
-
-FUNC(void, EEP_CODE) class_Eep::Read(void){
-}
-
-FUNC(void, EEP_CODE) class_Eep::Write(void){
-}
-
-FUNC(void, EEP_CODE) class_Eep::Erase(void){
-}
-
-FUNC(void, EEP_CODE) class_Eep::Compare(void){
-}
-
-FUNC(void, EEP_CODE) class_Eep::Cancel(void){
-}
-
-FUNC(void, EEP_CODE) class_Eep::GetStatus(void){
-}
-
-FUNC(void, EEP_CODE) class_Eep::GetJobResult(void){
-}
-
-FUNC(void, EEP_CODE) class_Eep::GetVersionInfo(void){
-}
-
-FUNC(void, EEP_CODE) class_Eep::MainFunction(void){
-}
+extern class_Eep_EcuM *Eep_EcuM_ptr;
 
 /*****************************************************/
 /* EOF                                               */
