@@ -33,9 +33,9 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_Eep Eep;
 class_Eep_EcuM Eep_EcuM;
-class_Eep_EcuM *Eep_EcuM_ptr = &Eep_EcuM;
+class_EcuM_Client *EcuM_Client_ptr_Eep = &Eep_EcuM;
+class_Eep Eep;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
