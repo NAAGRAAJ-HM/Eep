@@ -6,9 +6,10 @@
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "Eep.h"
-
+#include "module.h"
 #include "Eep_EcuM.h"
+#include "Eep_SchM.h"
+#include "Eep_Unused.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -21,6 +22,16 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
+class module_Eep:
+      public abstract_module
+   ,  public interface_Eep_EcuM
+   ,  public interface_Eep_SchM
+{
+   public:
+      FUNC(void, EEP_CODE) InitFunction   (void);
+      FUNC(void, EEP_CODE) DeInitFunction (void);
+      FUNC(void, EEP_CODE) MainFunction   (void);
+};
 
 /*****************************************************/
 /* CONSTS                                            */
@@ -33,44 +44,48 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_Eep_EcuM Eep_EcuM;
-class_EcuM_Client *EcuM_Client_ptr_Eep = &Eep_EcuM;
-class_Eep Eep;
+module_Eep Eep;
+
+interface_Eep_EcuM *EcuM_Client_ptr_Eep = &Eep;
+interface_Eep_SchM *SchM_Client_ptr_Eep = &Eep;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, EEP_CODE) class_Eep_EcuM::InitFunction(void){
+FUNC(void, EEP_CODE) module_Eep::InitFunction(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep::SetMode(void){
+FUNC(void, EEP_CODE) module_Eep::DeInitFunction(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep::Read(void){
+FUNC(void, EEP_CODE) module_Eep::MainFunction(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep::Write(void){
+FUNC(void, EEP_CODE) class_Eep_Unused::SetMode(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep::Erase(void){
+FUNC(void, EEP_CODE) class_Eep_Unused::Read(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep::Compare(void){
+FUNC(void, EEP_CODE) class_Eep_Unused::Write(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep::Cancel(void){
+FUNC(void, EEP_CODE) class_Eep_Unused::Erase(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep::GetStatus(void){
+FUNC(void, EEP_CODE) class_Eep_Unused::Compare(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep::GetJobResult(void){
+FUNC(void, EEP_CODE) class_Eep_Unused::Cancel(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep::GetVersionInfo(void){
+FUNC(void, EEP_CODE) class_Eep_Unused::GetStatus(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep::MainFunction(void){
+FUNC(void, EEP_CODE) class_Eep_Unused::GetJobResult(void){
+}
+
+FUNC(void, EEP_CODE) class_Eep_Unused::GetVersionInfo(void){
 }
 
 /*****************************************************/

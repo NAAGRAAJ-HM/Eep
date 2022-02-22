@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : Eep_EcuM.h                               */
+/* File   : Eep_SchM.h                               */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -9,7 +9,7 @@
 /*****************************************************/
 #include "Compiler_Cfg_Eep.h"
 
-#include "EcuM_Client.h"
+#include "SchM_Client.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -22,13 +22,12 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class interface_Eep_EcuM : public interface_EcuM_Client{
+class interface_Eep_SchM : public interface_SchM_Client{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, EEP_CODE) InitFunction   (void);
-      FUNC(void, EEP_CODE) DeInitFunction (void);
+      FUNC(void, EEP_CODE) MainFunction(void);
 };
 
 /*****************************************************/
@@ -42,7 +41,7 @@ class interface_Eep_EcuM : public interface_EcuM_Client{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_Eep_EcuM *EcuM_Client_ptr_Eep;
+extern interface_Eep_SchM *SchM_Client_ptr_Eep;
 
 /*****************************************************/
 /* EOF                                               */

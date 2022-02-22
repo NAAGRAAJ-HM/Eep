@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : Eep.h                                    */
+/* File   : Eep_Unused.h                             */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -21,7 +21,7 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class class_Eep{
+class class_Eep_Unused{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
@@ -35,7 +35,6 @@ class class_Eep{
       FUNC(void, EEP_CODE) GetStatus      (void);
       FUNC(void, EEP_CODE) GetJobResult   (void);
       FUNC(void, EEP_CODE) GetVersionInfo (void);
-      FUNC(void, EEP_CODE) MainFunction   (void);
 };
 
 /*****************************************************/
@@ -49,7 +48,7 @@ class class_Eep{
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_Eep Eep;
+//extern class_Eep Eep;
 
 /*****************************************************/
 /* EOF                                               */
