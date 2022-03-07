@@ -24,8 +24,6 @@
 /*****************************************************/
 class module_Eep:
       public abstract_module
-   ,  public interface_Eep_EcuM
-   ,  public interface_Eep_SchM
 {
    public:
       FUNC(void, EEP_CODE) InitFunction   (void);
@@ -44,10 +42,9 @@ class module_Eep:
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_Eep Eep;
-
-interface_Eep_EcuM *EcuM_Client_ptr_Eep = &Eep;
-interface_Eep_SchM *SchM_Client_ptr_Eep = &Eep;
+module_Eep     Eep;
+infEcuMClient* gptrinfEcuMClient_Eep = &Eep;
+infSchMClient* gptrinfSchMClient_Eep = &Eep;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
