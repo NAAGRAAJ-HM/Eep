@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern interface_Eep_SchM *SchM_Client_ptr_Eep;
+extern infSchMClient *gptrinfSchMClient_Eep;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
