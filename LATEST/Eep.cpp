@@ -7,8 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-#include "Eep_EcuM.h"
-#include "Eep_SchM.h"
+#include "infEep_EcuM.h"
+#include "infEep_SchM.h"
 #include "Eep_Unused.h"
 
 /*****************************************************/
@@ -28,6 +28,7 @@ class module_Eep:
    public:
       FUNC(void, EEP_CODE) InitFunction   (void);
       FUNC(void, EEP_CODE) DeInitFunction (void);
+      FUNC(void, EEP_CODE) GetVersionInfo (void);
       FUNC(void, EEP_CODE) MainFunction   (void);
 };
 
@@ -44,6 +45,7 @@ class module_Eep:
 /*****************************************************/
 module_Eep     Eep;
 infEcuMClient* gptrinfEcuMClient_Eep = &Eep;
+infDcmClient*  gptrinfDcmClient_Eep  = &Eep;
 infSchMClient* gptrinfSchMClient_Eep = &Eep;
 
 /*****************************************************/
@@ -53,6 +55,9 @@ FUNC(void, EEP_CODE) module_Eep::InitFunction(void){
 }
 
 FUNC(void, EEP_CODE) module_Eep::DeInitFunction(void){
+}
+
+FUNC(void, EEP_CODE) module_Eep::GetVersionInfo(void){
 }
 
 FUNC(void, EEP_CODE) module_Eep::MainFunction(void){
