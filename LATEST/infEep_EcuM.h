@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : Eep_SchM.h                               */
+/* File   : infEep_EcuM.h                            */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern infSchMClient* gptrinfSchMClient_Eep;
+extern infEcuMClient* gptrinfEcuMClient_Eep;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
