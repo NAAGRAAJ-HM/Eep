@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "infEep_Version.h"
+#include "Eep_Cfg.h"
 #include "infEep_EcuM.h"
 #include "infEep_Dcm.h"
 #include "infEep_SchM.h"
@@ -15,10 +15,19 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define EEP_AR_RELEASE_MAJOR_VERSION                                           4
+#define EEP_AR_RELEASE_MINOR_VERSION                                           3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
+#if(EEP_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
+   #error "Incompatible EEP_AR_RELEASE_MAJOR_VERSION!"
+#endif
+
+#if(EEP_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
+   #error "Incompatible EEP_AR_RELEASE_MINOR_VERSION!"
+#endif
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
@@ -61,6 +70,11 @@ FUNC(void, EEP_CODE) module_Eep::DeInitFunction(void){
 }
 
 FUNC(void, EEP_CODE) module_Eep::GetVersionInfo(void){
+#if(STD_ON == Eep_DevErrorDetect)
+//TBD: API parameter check
+   Det_ReportError(
+   );
+#endif
 }
 
 FUNC(void, EEP_CODE) module_Eep::MainFunction(void){
