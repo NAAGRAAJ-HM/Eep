@@ -7,7 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.h"
-#include "Eep_Cfg.h"
+#include "CfgEep.h"
 #include "infEep_EcuM.h"
 #include "infEep_Dcm.h"
 #include "infEep_SchM.h"
