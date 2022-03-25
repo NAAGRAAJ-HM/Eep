@@ -6,11 +6,11 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.h"
-#include "CfgEep.h"
-#include "infEep_EcuM.h"
-#include "infEep_Dcm.h"
-#include "infEep_SchM.h"
+#include "module.hpp"
+#include "CfgEep.hpp"
+#include "infEep_EcuM.hpp"
+#include "infEep_Dcm.hpp"
+#include "infEep_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -90,7 +90,7 @@ FUNC(void, EEP_CODE) module_Eep::GetVersionInfo(void){
 FUNC(void, EEP_CODE) module_Eep::MainFunction(void){
 }
 
-#include "Eep_Unused.h"
+#include "Eep_Unused.hpp"
 
 FUNC(void, EEP_CODE) class_Eep_Unused::SetMode(void){
 }
