@@ -90,7 +90,17 @@ FUNC(void, EEP_CODE) module_Eep::GetVersionInfo(void){
 FUNC(void, EEP_CODE) module_Eep::MainFunction(void){
 }
 
-#include "Eep_Unused.hpp"
+class class_Eep_Unused{
+   public:
+      FUNC(void, EEP_CODE) SetMode        (void);
+      FUNC(void, EEP_CODE) Read           (void);
+      FUNC(void, EEP_CODE) Write          (void);
+      FUNC(void, EEP_CODE) Erase          (void);
+      FUNC(void, EEP_CODE) Compare        (void);
+      FUNC(void, EEP_CODE) Cancel         (void);
+      FUNC(void, EEP_CODE) GetStatus      (void);
+      FUNC(void, EEP_CODE) GetJobResult   (void);
+};
 
 FUNC(void, EEP_CODE) class_Eep_Unused::SetMode(void){
 }
