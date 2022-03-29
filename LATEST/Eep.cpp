@@ -7,7 +7,6 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.hpp"
-#include "CfgEep.hpp"
 #include "infEep_EcuM.hpp"
 #include "infEep_Dcm.hpp"
 #include "infEep_SchM.hpp"
@@ -36,37 +35,40 @@ class module_Eep:
       public abstract_module
 {
    public:
+      module_Eep(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
+      }
       FUNC(void, EEP_CODE) InitFunction   (void);
       FUNC(void, EEP_CODE) DeInitFunction (void);
-      FUNC(void, EEP_CODE) GetVersionInfo (void);
       FUNC(void, EEP_CODE) MainFunction   (void);
-
-   private:
-      CONST(Std_TypeVersionInfo, EEP_CONST) VersionInfo = {
-            0x0000
-         ,  0xFFFF
-         ,  0x01
-         ,  '0'
-         ,  '1'
-         ,  '0'
-      };
 };
+
+extern VAR(module_Eep, EEP_VAR) Eep;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
+CONSTP2VAR(infEcuMClient, EEP_VAR, EEP_CONST) gptrinfEcuMClient_Eep = &Eep;
+CONSTP2VAR(infDcmClient,  EEP_VAR, EEP_CONST) gptrinfDcmClient_Eep  = &Eep;
+CONSTP2VAR(infSchMClient, EEP_VAR, EEP_CONST) gptrinfSchMClient_Eep = &Eep;
 
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
+#include "CfgEep.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_Eep, EEP_VAR) Eep;
-CONSTP2VAR(infEcuMClient, EEP_VAR, EEP_CONST) gptrinfEcuMClient_Eep = &Eep;
-CONSTP2VAR(infDcmClient,  EEP_VAR, EEP_CONST) gptrinfDcmClient_Eep  = &Eep;
-CONSTP2VAR(infSchMClient, EEP_VAR, EEP_CONST) gptrinfSchMClient_Eep = &Eep;
+VAR(module_Eep, EEP_VAR) Eep(
+   {
+         0x0000
+      ,  0xFFFF
+      ,  0x01
+      ,  '0'
+      ,  '1'
+      ,  '0'
+   }
+);
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -77,14 +79,6 @@ FUNC(void, EEP_CODE) module_Eep::InitFunction(void){
 
 FUNC(void, EEP_CODE) module_Eep::DeInitFunction(void){
    Eep.IsInitDone = E_NOT_OK;
-}
-
-FUNC(void, EEP_CODE) module_Eep::GetVersionInfo(void){
-#if(STD_ON == Eep_DevErrorDetect)
-//TBD: API parameter check
-   Det_ReportError(
-   );
-#endif
 }
 
 FUNC(void, EEP_CODE) module_Eep::MainFunction(void){
