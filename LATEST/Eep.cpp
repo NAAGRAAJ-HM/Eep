@@ -37,10 +37,9 @@ class module_Eep:
    public:
       module_Eep(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
-      FUNC(void, _CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      FUNC(void, EEP_CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, EEP_CONFIG_DATA, EEP_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, EEP_CODE) InitFunction   (void);
       FUNC(void, EEP_CODE) DeInitFunction (void);
       FUNC(void, EEP_CODE) MainFunction   (void);
 };
@@ -77,23 +76,39 @@ VAR(module_Eep, EEP_VAR) Eep(
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, EEP_CODE) module_Eep::InitFunction(
-   CONSTP2CONST(CfgEep_Type, CFGEEP_CONFIG_DATA, CFGEEP_APPL_CONST) lptrCfgEep
+   CONSTP2CONST(CfgModule_TypeAbstract, EEP_CONFIG_DATA, EEP_APPL_CONST) lptrCfgModule
 ){
-   if(NULL_PTR == lptrCfgEep){
+   if(E_OK == IsInitDone){
 #if(STD_ON == Eep_DevErrorDetect)
       Det_ReportError(
       );
 #endif
    }
    else{
-// check lptrCfgEep for memory faults
+      if(NULL_PTR == lptrCfgModule){
+#if(STD_ON == Eep_DevErrorDetect)
+         Det_ReportError(
+         );
+#endif
+      }
+      else{
+// check lptrCfgModule for memory faults
 // use PBcfg_Eep as back-up configuration
+      }
+      IsInitDone = E_OK;
    }
-   Eep.IsInitDone = E_OK;
 }
 
 FUNC(void, EEP_CODE) module_Eep::DeInitFunction(void){
-   Eep.IsInitDone = E_NOT_OK;
+   if(E_OK != IsInitDone){
+#if(STD_ON == Eep_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+      IsInitDone = E_NOT_OK;
+   }
 }
 
 FUNC(void, EEP_CODE) module_Eep::MainFunction(void){
