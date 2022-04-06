@@ -14,18 +14,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define EEP_AR_RELEASE_MAJOR_VERSION                                           4
-#define EEP_AR_RELEASE_MINOR_VERSION                                           3
+#define EEP_AR_RELEASE_VERSION_MAJOR                                           4
+#define EEP_AR_RELEASE_VERSION_MINOR                                           3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(EEP_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
-   #error "Incompatible EEP_AR_RELEASE_MAJOR_VERSION!"
+#if(EEP_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible EEP_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(EEP_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
-   #error "Incompatible EEP_AR_RELEASE_MINOR_VERSION!"
+#if(EEP_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible EEP_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -63,8 +63,10 @@ CONSTP2VAR(infSchMClient, EEP_VAR, EEP_CONST) gptrinfSchMClient_Eep = &Eep;
 /******************************************************************************/
 VAR(module_Eep, EEP_VAR) Eep(
    {
-         0x0000
-      ,  0xFFFF
+         EEP_AR_RELEASE_VERSION_MAJOR
+      ,  EEP_AR_RELEASE_VERSION_MINOR
+      ,  0x00
+      ,  0xFF
       ,  0x01
       ,  '0'
       ,  '1'
