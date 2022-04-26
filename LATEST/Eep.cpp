@@ -31,8 +31,21 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+class class_Eep_Functionality{
+   public:
+      FUNC(void, EEP_CODE) SetMode        (void);
+      FUNC(void, EEP_CODE) Read           (void);
+      FUNC(void, EEP_CODE) Write          (void);
+      FUNC(void, EEP_CODE) Erase          (void);
+      FUNC(void, EEP_CODE) Compare        (void);
+      FUNC(void, EEP_CODE) Cancel         (void);
+      FUNC(void, EEP_CODE) GetStatus      (void);
+      FUNC(void, EEP_CODE) GetJobResult   (void);
+};
+
 class module_Eep:
       public abstract_module
+   ,  public class_Eep_Functionality
 {
    public:
       module_Eep(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
@@ -84,6 +97,10 @@ FUNC(void, EEP_CODE) module_Eep::InitFunction(
    if(E_OK == IsInitDone){
 #if(STD_ON == Eep_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -92,6 +109,10 @@ FUNC(void, EEP_CODE) module_Eep::InitFunction(
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == Eep_DevErrorDetect)
          Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
          );
 #endif
       }
@@ -116,6 +137,10 @@ FUNC(void, EEP_CODE) module_Eep::DeInitFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == Eep_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -132,6 +157,10 @@ FUNC(void, EEP_CODE) module_Eep::MainFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == Eep_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -142,40 +171,28 @@ FUNC(void, EEP_CODE) module_Eep::MainFunction(void){
 #endif
 }
 
-class class_Eep_Unused{
-   public:
-      FUNC(void, EEP_CODE) SetMode        (void);
-      FUNC(void, EEP_CODE) Read           (void);
-      FUNC(void, EEP_CODE) Write          (void);
-      FUNC(void, EEP_CODE) Erase          (void);
-      FUNC(void, EEP_CODE) Compare        (void);
-      FUNC(void, EEP_CODE) Cancel         (void);
-      FUNC(void, EEP_CODE) GetStatus      (void);
-      FUNC(void, EEP_CODE) GetJobResult   (void);
-};
-
-FUNC(void, EEP_CODE) class_Eep_Unused::SetMode(void){
+FUNC(void, EEP_CODE) class_Eep_Functionality::SetMode(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep_Unused::Read(void){
+FUNC(void, EEP_CODE) class_Eep_Functionality::Read(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep_Unused::Write(void){
+FUNC(void, EEP_CODE) class_Eep_Functionality::Write(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep_Unused::Erase(void){
+FUNC(void, EEP_CODE) class_Eep_Functionality::Erase(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep_Unused::Compare(void){
+FUNC(void, EEP_CODE) class_Eep_Functionality::Compare(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep_Unused::Cancel(void){
+FUNC(void, EEP_CODE) class_Eep_Functionality::Cancel(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep_Unused::GetStatus(void){
+FUNC(void, EEP_CODE) class_Eep_Functionality::GetStatus(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep_Unused::GetJobResult(void){
+FUNC(void, EEP_CODE) class_Eep_Functionality::GetJobResult(void){
 }
 
 /******************************************************************************/
