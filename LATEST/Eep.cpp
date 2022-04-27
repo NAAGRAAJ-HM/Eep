@@ -31,18 +31,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class class_Eep_Functionality{
-   public:
-      FUNC(void, EEP_CODE) SetMode        (void);
-      FUNC(void, EEP_CODE) Read           (void);
-      FUNC(void, EEP_CODE) Write          (void);
-      FUNC(void, EEP_CODE) Erase          (void);
-      FUNC(void, EEP_CODE) Compare        (void);
-      FUNC(void, EEP_CODE) Cancel         (void);
-      FUNC(void, EEP_CODE) GetStatus      (void);
-      FUNC(void, EEP_CODE) GetJobResult   (void);
-};
-
 class module_Eep:
       public abstract_module
    ,  public class_Eep_Functionality
