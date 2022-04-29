@@ -7,10 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgEep.hpp"
 #include "Eep_core.hpp"
-#include "infEep_EcuM.hpp"
-#include "infEep_Dcm.hpp"
-#include "infEep_SchM.hpp"
+#include "infEep.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -44,6 +43,7 @@ class module_Eep:
       );
       FUNC(void, EEP_CODE) DeInitFunction (void);
       FUNC(void, EEP_CODE) MainFunction   (void);
+      EEP_CORE_FUNCTIONALITIES
 };
 
 extern VAR(module_Eep, EEP_VAR) Eep;
@@ -58,7 +58,6 @@ CONSTP2VAR(infSchMClient, EEP_VAR, EEP_CONST) gptrinfSchMClient_Eep = &Eep;
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgEep.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
