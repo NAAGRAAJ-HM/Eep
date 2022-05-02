@@ -159,28 +159,28 @@ FUNC(void, EEP_CODE) module_Eep::MainFunction(void){
 #endif
 }
 
-FUNC(void, EEP_CODE) class_Eep_Functionality::SetMode(void){
+FUNC(void, EEP_CODE) module_Eep::SetMode(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep_Functionality::Read(void){
+FUNC(void, EEP_CODE) module_Eep::Read(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep_Functionality::Write(void){
+FUNC(void, EEP_CODE) module_Eep::Write(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep_Functionality::Erase(void){
+FUNC(void, EEP_CODE) module_Eep::Erase(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep_Functionality::Compare(void){
+FUNC(void, EEP_CODE) module_Eep::Compare(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep_Functionality::Cancel(void){
+FUNC(void, EEP_CODE) module_Eep::Cancel(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep_Functionality::GetStatus(void){
+FUNC(void, EEP_CODE) module_Eep::GetStatus(void){
 }
 
-FUNC(void, EEP_CODE) class_Eep_Functionality::GetJobResult(void){
+FUNC(void, EEP_CODE) module_Eep::GetJobResult(void){
 }
 
 /******************************************************************************/
