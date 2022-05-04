@@ -113,7 +113,7 @@ FUNC(void, EEP_CODE) module_Eep::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  EEP_E_UNINIT
       );
 #endif
    }
@@ -133,7 +133,7 @@ FUNC(void, EEP_CODE) module_Eep::DeInitFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  EEP_E_UNINIT
       );
 #endif
    }
@@ -152,7 +152,7 @@ FUNC(void, EEP_CODE) module_Eep::MainFunction(void){
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  0 //TBD: IdError
+         ,  EEP_E_UNINIT
       );
 #endif
    }
