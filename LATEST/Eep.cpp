@@ -89,7 +89,10 @@ FUNC(void, EEP_CODE) module_Eep::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, EEP_CONFIG_DATA, EEP_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == Eep_InitCheck)
-   if(E_OK != IsInitDone){
+   if(
+         E_OK
+      != IsInitDone
+   ){
 #endif
       if(NULL_PTR != lptrCfgModule){
          if(STD_HIGH){
@@ -127,7 +130,10 @@ FUNC(void, EEP_CODE) module_Eep::InitFunction(
 
 FUNC(void, EEP_CODE) module_Eep::DeInitFunction(void){
 #if(STD_ON == Eep_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == Eep_InitCheck)
       IsInitDone = E_NOT_OK;
@@ -147,7 +153,10 @@ FUNC(void, EEP_CODE) module_Eep::DeInitFunction(void){
 
 FUNC(void, EEP_CODE) module_Eep::MainFunction(void){
 #if(STD_ON == Eep_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == Eep_InitCheck)
    }
