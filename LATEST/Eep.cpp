@@ -9,7 +9,7 @@
 #include "Module.hpp"
 #include "CfgEep.hpp"
 #include "Eep_core.hpp"
-#include "infEep.hpp"
+#include "infEep_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -32,6 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_Eep:
+   INTERFACES_EXPORTED_EEP
       public abstract_module
    ,  public class_Eep_Functionality
 {
