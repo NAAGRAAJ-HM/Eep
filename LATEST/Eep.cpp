@@ -32,7 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_Eep:
-   INTERFACES_EXPORTED_EEP
+      INTERFACES_EXPORTED_EEP
       public abstract_module
    ,  public class_Eep_Functionality
 {
