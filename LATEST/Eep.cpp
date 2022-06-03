@@ -10,6 +10,7 @@
 #include "CfgEep.hpp"
 #include "Eep_core.hpp"
 #include "infEep_Exp.hpp"
+#include "infEep_Imp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
