@@ -74,7 +74,7 @@ CONSTP2VAR(infSchMClient, EEP_VAR, EEP_CONST) gptrinfSchMClient_Eep = &Eep;
 VAR(module_Eep, EEP_VAR) Eep(
    {
 #if(STD_ON == _ReSIM)
-// char strModuleName[6];
+   char strModuleName[6] = "EEP";
 #else
 #endif
          EEP_AR_RELEASE_VERSION_MAJOR
