@@ -74,10 +74,10 @@ CONSTP2VAR(infSchMClient, EEP_VAR, EEP_CONST) gptrinfSchMClient_Eep = &Eep;
 VAR(module_Eep, EEP_VAR) Eep(
    {
 #if(STD_ON == _ReSIM)
-         "Eep"
+         "Eep",
 #else
 #endif
-      ,  EEP_AR_RELEASE_VERSION_MAJOR
+         EEP_AR_RELEASE_VERSION_MAJOR
       ,  EEP_AR_RELEASE_VERSION_MINOR
       ,  0x00
       ,  0xFF
