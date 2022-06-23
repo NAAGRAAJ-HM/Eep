@@ -130,7 +130,9 @@ FUNC(void, EEP_CODE) module_Eep::InitFunction(
 #endif
 }
 
-FUNC(void, EEP_CODE) module_Eep::DeInitFunction(void){
+FUNC(void, EEP_CODE) module_Eep::DeInitFunction(
+   void
+){
 #if(STD_ON == Eep_InitCheck)
    if(
          E_OK
@@ -153,7 +155,9 @@ FUNC(void, EEP_CODE) module_Eep::DeInitFunction(void){
 #endif
 }
 
-FUNC(void, EEP_CODE) module_Eep::MainFunction(void){
+FUNC(void, EEP_CODE) module_Eep::MainFunction(
+   void
+){
 #if(STD_ON == Eep_InitCheck)
    if(
          E_OK
@@ -175,28 +179,44 @@ FUNC(void, EEP_CODE) module_Eep::MainFunction(void){
 #endif
 }
 
-FUNC(void, EEP_CODE) module_Eep::SetMode(void){
+FUNC(void, EEP_CODE) module_Eep::SetMode(
+   void
+){
 }
 
-FUNC(void, EEP_CODE) module_Eep::Read(void){
+FUNC(void, EEP_CODE) module_Eep::Read(
+   void
+){
 }
 
-FUNC(void, EEP_CODE) module_Eep::Write(void){
+FUNC(void, EEP_CODE) module_Eep::Write(
+   void
+){
 }
 
-FUNC(void, EEP_CODE) module_Eep::Erase(void){
+FUNC(void, EEP_CODE) module_Eep::Erase(
+   void
+){
 }
 
-FUNC(void, EEP_CODE) module_Eep::Compare(void){
+FUNC(void, EEP_CODE) module_Eep::Compare(
+   void
+){
 }
 
-FUNC(void, EEP_CODE) module_Eep::Cancel(void){
+FUNC(void, EEP_CODE) module_Eep::Cancel(
+   void
+){
 }
 
-FUNC(void, EEP_CODE) module_Eep::GetStatus(void){
+FUNC(void, EEP_CODE) module_Eep::GetStatus(
+   void
+){
 }
 
-FUNC(void, EEP_CODE) module_Eep::GetJobResult(void){
+FUNC(void, EEP_CODE) module_Eep::GetJobResult(
+   void
+){
 }
 
 /******************************************************************************/
