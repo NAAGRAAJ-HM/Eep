@@ -82,12 +82,7 @@ FUNC(void, EEP_CODE) module_Eep::InitFunction(
    ){
 #endif
       if(NULL_PTR != lptrCfgModule){
-         if(STD_HIGH){
-            lptrCfg = lptrCfgModule;
-         }
-         else{
-            lptrCfg = &PBcfgEep;
-         }
+         lptrCfg = lptrCfgModule;
       }
       else{
 #if(STD_ON == Eep_DevErrorDetect)
