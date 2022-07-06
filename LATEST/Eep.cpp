@@ -7,9 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
-#include "CfgEep.hpp"
-#include "Eep_core.hpp"
-#include "infEep_Exp.hpp"
+#include "Eep.hpp"
 #include "infEep_Imp.hpp"
 
 /******************************************************************************/
@@ -32,26 +30,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_Eep:
-      INTERFACES_EXPORTED_EEP
-      public abstract_module
-   ,  public class_Eep_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-
-   public:
-      FUNC(void, EEP_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, EEP_CONFIG_DATA, EEP_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, EEP_CODE) DeInitFunction (void);
-      FUNC(void, EEP_CODE) MainFunction   (void);
-      EEP_CORE_FUNCTIONALITIES
-};
-
-extern VAR(module_Eep, EEP_VAR) Eep;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
