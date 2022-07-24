@@ -7,6 +7,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "ConstEep.hpp"
 #include "CfgEep.hpp"
 #include "Eep_core.hpp"
 #include "infEep_Exp.hpp"
@@ -31,13 +32,15 @@ class module_Eep:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+      const ConstEep_Type* lptrConst = (ConstEep_Type*)NULL_PTR;
 
    public:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, EEP_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, EEP_CONFIG_DATA, EEP_APPL_CONST) lptrCfgModule
+            CONSTP2CONST(ConstModule_TypeAbstract, EEP_CONST,       EEP_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   EEP_CONFIG_DATA, EEP_APPL_CONST) lptrCfgModule
       );
       FUNC(void, EEP_CODE) DeInitFunction (void);
       FUNC(void, EEP_CODE) MainFunction   (void);

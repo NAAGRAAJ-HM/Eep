@@ -48,7 +48,8 @@ VAR(module_Eep, EEP_VAR) Eep;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, EEP_CODE) module_Eep::InitFunction(
-   CONSTP2CONST(CfgModule_TypeAbstract, EEP_CONFIG_DATA, EEP_APPL_CONST) lptrCfgModule
+      CONSTP2CONST(ConstModule_TypeAbstract, EEP_CONST,       EEP_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   EEP_CONFIG_DATA, EEP_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == Eep_InitCheck)
    if(
@@ -56,8 +57,12 @@ FUNC(void, EEP_CODE) module_Eep::InitFunction(
       != IsInitDone
    ){
 #endif
-      if(NULL_PTR != lptrCfgModule){
-         lptrCfg = lptrCfgModule;
+      if(
+            (NULL_PTR != lptrConstModule)
+         && (NULL_PTR != lptrCfgModule)
+      ){
+         lptrConst = lptrConstModule;
+         lptrCfg   = lptrCfgModule;
       }
       else{
 #if(STD_ON == Eep_DevErrorDetect)
