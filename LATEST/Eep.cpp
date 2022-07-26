@@ -61,7 +61,7 @@ FUNC(void, EEP_CODE) module_Eep::InitFunction(
             (NULL_PTR != lptrConstModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = lptrConstModule;
+         lptrConst = (const ConstEep_Type*)lptrConstModule;
          lptrCfg   = lptrCfgModule;
       }
       else{
