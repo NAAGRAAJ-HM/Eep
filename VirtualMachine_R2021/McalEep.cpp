@@ -13,18 +13,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define MCALEEP_AR_RELEASE_VERSION_MAJOR                                           4
-#define MCALEEP_AR_RELEASE_VERSION_MINOR                                           3
+#define EEP_AR_RELEASE_VERSION_MAJOR                                           4
+#define EEP_AR_RELEASE_VERSION_MINOR                                           3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(MCALEEP_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible MCALEEP_AR_RELEASE_VERSION_MAJOR!"
+#if(EEP_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible EEP_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(MCALEEP_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible MCALEEP_AR_RELEASE_VERSION_MINOR!"
+#if(EEP_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible EEP_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -42,14 +42,14 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_McalEep, MCALEEP_VAR) McalEep;
+VAR(module_McalEep, EEP_VAR) McalEep;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, MCALEEP_CODE) module_McalEep::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, MCALEEP_CONST,       MCALEEP_APPL_CONST) lptrConstModule
-   ,  CONSTP2CONST(CfgModule_TypeAbstract,   MCALEEP_CONFIG_DATA, MCALEEP_APPL_CONST) lptrCfgModule
+FUNC(void, EEP_CODE) module_McalEep::InitFunction(
+      CONSTP2CONST(ConstModule_TypeAbstract, EEP_CONST,       EEP_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   EEP_CONFIG_DATA, EEP_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == McalEep_InitCheck)
    if(
@@ -83,14 +83,14 @@ FUNC(void, MCALEEP_CODE) module_McalEep::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  MCALEEP_E_UNINIT
+         ,  EEP_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, MCALEEP_CODE) module_McalEep::DeInitFunction(
+FUNC(void, EEP_CODE) module_McalEep::DeInitFunction(
    void
 ){
 #if(STD_ON == McalEep_InitCheck)
@@ -108,14 +108,14 @@ FUNC(void, MCALEEP_CODE) module_McalEep::DeInitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  MCALEEP_E_UNINIT
+         ,  EEP_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, MCALEEP_CODE) module_McalEep::MainFunction(
+FUNC(void, EEP_CODE) module_McalEep::MainFunction(
    void
 ){
 #if(STD_ON == McalEep_InitCheck)
@@ -132,49 +132,49 @@ FUNC(void, MCALEEP_CODE) module_McalEep::MainFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  MCALEEP_E_UNINIT
+         ,  EEP_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, MCALEEP_CODE) module_McalEep::SetMode(
+FUNC(void, EEP_CODE) module_McalEep::SetMode(
    void
 ){
 }
 
-FUNC(void, MCALEEP_CODE) module_McalEep::Read(
+FUNC(void, EEP_CODE) module_McalEep::Read(
    void
 ){
 }
 
-FUNC(void, MCALEEP_CODE) module_McalEep::Write(
+FUNC(void, EEP_CODE) module_McalEep::Write(
    void
 ){
 }
 
-FUNC(void, MCALEEP_CODE) module_McalEep::Erase(
+FUNC(void, EEP_CODE) module_McalEep::Erase(
    void
 ){
 }
 
-FUNC(void, MCALEEP_CODE) module_McalEep::ServiceCompare(
+FUNC(void, EEP_CODE) module_McalEep::ServiceCompare(
    void
 ){
 }
 
-FUNC(void, MCALEEP_CODE) module_McalEep::McalCancel(
+FUNC(void, EEP_CODE) module_McalEep::McalCancel(
    void
 ){
 }
 
-FUNC(void, MCALEEP_CODE) module_McalEep::GetStatus(
+FUNC(void, EEP_CODE) module_McalEep::GetStatus(
    void
 ){
 }
 
-FUNC(void, MCALEEP_CODE) module_McalEep::GetJobResult(
+FUNC(void, EEP_CODE) module_McalEep::GetJobResult(
    void
 ){
 }

@@ -12,25 +12,25 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define EEP_CORE_FUNCTIONALITIES                                               \
-              FUNC(void, EEP_CODE) SetMode        (void);                      \
-              FUNC(void, EEP_CODE) Read           (void);                      \
-              FUNC(void, EEP_CODE) Write          (void);                      \
-              FUNC(void, EEP_CODE) Erase          (void);                      \
-              FUNC(void, EEP_CODE) ServiceCompare        (void);                      \
-              FUNC(void, EEP_CODE) McalCancel         (void);                      \
-              FUNC(void, EEP_CODE) GetStatus      (void);                      \
-              FUNC(void, EEP_CODE) GetJobResult   (void);                      \
+#define MCALEEP_CORE_FUNCTIONALITIES                                               \
+              FUNC(void, MCALEEP_CODE) SetMode        (void);                      \
+              FUNC(void, MCALEEP_CODE) Read           (void);                      \
+              FUNC(void, MCALEEP_CODE) Write          (void);                      \
+              FUNC(void, MCALEEP_CODE) Erase          (void);                      \
+              FUNC(void, MCALEEP_CODE) ServiceCompare        (void);                      \
+              FUNC(void, MCALEEP_CODE) McalCancel         (void);                      \
+              FUNC(void, MCALEEP_CODE) GetStatus      (void);                      \
+              FUNC(void, MCALEEP_CODE) GetJobResult   (void);                      \
 
-#define EEP_CORE_FUNCTIONALITIES_VIRTUAL                                       \
-      virtual FUNC(void, EEP_CODE) SetMode        (void) = 0;                  \
-      virtual FUNC(void, EEP_CODE) Read           (void) = 0;                  \
-      virtual FUNC(void, EEP_CODE) Write          (void) = 0;                  \
-      virtual FUNC(void, EEP_CODE) Erase          (void) = 0;                  \
-      virtual FUNC(void, EEP_CODE) ServiceCompare        (void) = 0;                  \
-      virtual FUNC(void, EEP_CODE) McalCancel         (void) = 0;                  \
-      virtual FUNC(void, EEP_CODE) GetStatus      (void) = 0;                  \
-      virtual FUNC(void, EEP_CODE) GetJobResult   (void) = 0;                  \
+#define MCALEEP_CORE_FUNCTIONALITIES_VIRTUAL                                       \
+      virtual FUNC(void, MCALEEP_CODE) SetMode        (void) = 0;                  \
+      virtual FUNC(void, MCALEEP_CODE) Read           (void) = 0;                  \
+      virtual FUNC(void, MCALEEP_CODE) Write          (void) = 0;                  \
+      virtual FUNC(void, MCALEEP_CODE) Erase          (void) = 0;                  \
+      virtual FUNC(void, MCALEEP_CODE) ServiceCompare        (void) = 0;                  \
+      virtual FUNC(void, MCALEEP_CODE) McalCancel         (void) = 0;                  \
+      virtual FUNC(void, MCALEEP_CODE) GetStatus      (void) = 0;                  \
+      virtual FUNC(void, MCALEEP_CODE) GetJobResult   (void) = 0;                  \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -41,7 +41,7 @@
 /******************************************************************************/
 class class_McalEep_Functionality{
    public:
-      EEP_CORE_FUNCTIONALITIES_VIRTUAL
+      MCALEEP_CORE_FUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/

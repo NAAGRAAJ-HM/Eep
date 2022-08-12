@@ -1,36 +1,20 @@
 #pragma once
 /******************************************************************************/
-/* File   : McalEep_core.hpp                                                      */
+/* File   : McalEep.hpp                                                           */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "CompilerCfg_McalEep.hpp"
+#include "ConstMcalEep.hpp"
+#include "CfgMcalEep.hpp"
+#include "McalEep_core.hpp"
+#include "infMcalEep_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define MCALEEP_CORE_FUNCTIONALITIES                                               \
-              FUNC(void, MCALEEP_CODE) SetMode        (void);                      \
-              FUNC(void, MCALEEP_CODE) Read           (void);                      \
-              FUNC(void, MCALEEP_CODE) Write          (void);                      \
-              FUNC(void, MCALEEP_CODE) Erase          (void);                      \
-              FUNC(void, MCALEEP_CODE) ServiceCompare        (void);                      \
-              FUNC(void, MCALEEP_CODE) McalCancel         (void);                      \
-              FUNC(void, MCALEEP_CODE) GetStatus      (void);                      \
-              FUNC(void, MCALEEP_CODE) GetJobResult   (void);                      \
-
-#define MCALEEP_CORE_FUNCTIONALITIES_VIRTUAL                                       \
-      virtual FUNC(void, MCALEEP_CODE) SetMode        (void) = 0;                  \
-      virtual FUNC(void, MCALEEP_CODE) Read           (void) = 0;                  \
-      virtual FUNC(void, MCALEEP_CODE) Write          (void) = 0;                  \
-      virtual FUNC(void, MCALEEP_CODE) Erase          (void) = 0;                  \
-      virtual FUNC(void, MCALEEP_CODE) ServiceCompare        (void) = 0;                  \
-      virtual FUNC(void, MCALEEP_CODE) McalCancel         (void) = 0;                  \
-      virtual FUNC(void, MCALEEP_CODE) GetStatus      (void) = 0;                  \
-      virtual FUNC(void, MCALEEP_CODE) GetJobResult   (void) = 0;                  \
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -39,9 +23,28 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class class_McalEep_Functionality{
+class module_McalEep:
+      INTERFACES_EXPORTED_EEP
+      public abstract_module
+   ,  public class_McalEep_Functionality
+{
+   private:
+/******************************************************************************/
+/* OBJECTS                                                                    */
+/******************************************************************************/
+      const ConstMcalEep_Type* lptrConst = (ConstMcalEep_Type*)NULL_PTR;
+
    public:
-      MCALEEP_CORE_FUNCTIONALITIES_VIRTUAL
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
+      FUNC(void, EEP_CODE) InitFunction(
+            CONSTP2CONST(ConstModule_TypeAbstract, EEP_CONST,       EEP_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   EEP_CONFIG_DATA, EEP_APPL_CONST) lptrCfgModule
+      );
+      FUNC(void, EEP_CODE) DeInitFunction (void);
+      FUNC(void, EEP_CODE) MainFunction   (void);
+      EEP_CORE_FUNCTIONALITIES
 };
 
 /******************************************************************************/
@@ -55,10 +58,7 @@ class class_McalEep_Functionality{
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
+extern VAR(module_McalEep, EEP_VAR) McalEep;
 
 /******************************************************************************/
 /* EOF                                                                        */
