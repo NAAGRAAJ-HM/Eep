@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : McalEep.hpp                                                           */
+/* File   : McalEep.hpp                                                       */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "ConstMcalEep.hpp"
+#include "infMcalEep_ServiceNvM_Types.hpp"
 #include "CfgMcalEep.hpp"
 #include "McalEep_core.hpp"
 #include "infMcalEep_Exp.hpp"
