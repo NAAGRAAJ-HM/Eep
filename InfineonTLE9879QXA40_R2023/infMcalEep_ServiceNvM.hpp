@@ -7,11 +7,8 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define CONSTMCALEEP_AR_RELEASE_VERSION_MAJOR                                  4
-#define CONSTMCALEEP_AR_RELEASE_VERSION_MINOR                                  3
-
-#define Const_DefaultInit_ConstMcalEep                                                                           \
-   ,  {CONSTMCALEEP_AR_RELEASE_VERSION_MAJOR, CONSTMCALEEP_AR_RELEASE_VERSION_MINOR, 0x00,0xFF,0x01,'0','1','0'} \
+#define NvM_InitBlocksRom_McalEep                                                                      \
+   ,  {MCALEEP_AR_RELEASE_VERSION_MAJOR, MCALEEP_AR_RELEASE_VERSION_MINOR, 0x00,0xFF,0x01,'0','1','0'} \
 
 /******************************************************************************/
 /* EOF                                                                        */
