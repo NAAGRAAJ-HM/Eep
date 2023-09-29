@@ -10,7 +10,7 @@
 #define IO_DEVICETYPE     RANDOM
 
 #ifndef V_API_NEAR
-# define V_API_NEAR
+#define V_API_NEAR
 #endif
 
 #define EEPROM_DRIVER_VERSION_MAJOR (EEP_IO_VERSION >> 8u)

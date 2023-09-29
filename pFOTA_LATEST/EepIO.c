@@ -15,17 +15,17 @@
 #define EEP_INIT_FLAG_SIZE          0x01u
 
 #if !defined( EEP_BUFFER_SIZE )
-# if defined( kEepSizeOfEeprom )
+#if defined( kEepSizeOfEeprom )
 
-#  define EEP_BUFFER_SIZE           EEP_ALIGN_LENGTH(kEepSizeOfEeprom + EEP_INIT_FLAG_SIZE, 4u)
-# else
-#  define EEP_BUFFER_SIZE           0x100u
-# endif
+#define EEP_BUFFER_SIZE           EEP_ALIGN_LENGTH(kEepSizeOfEeprom + EEP_INIT_FLAG_SIZE, 4u)
+#else
+#define EEP_BUFFER_SIZE           0x100u
+#endif
 #endif
 
 #define EEP_BUFFER_SIZE_WRITEABLE   (EEP_BUFFER_SIZE - EEP_INIT_FLAG_SIZE)
 
-# define EEP_BASE_ADDRESS           ((vuint32)eepData)
+#define EEP_BASE_ADDRESS           ((vuint32)eepData)
 
 #define EEPDUMMY_START_SEC_VAR
 #include "MemMap.hpp"
@@ -63,7 +63,7 @@ IO_ErrorType V_API_NEAR EepromDriver_InitSync( void * address ){
 #endif
 
    if(EEP_INIT_FLAG != eepData[EEP_BUFFER_SIZE_WRITEABLE]){
-      for (i = 0u; i < EEP_BUFFER_SIZE_WRITEABLE; i++)
+      for(i = 0u; i < EEP_BUFFER_SIZE_WRITEABLE; i++)
       {
          eepData[i] = 0xFFu;
       }
